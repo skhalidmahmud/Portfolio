@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
             --bg-color: white;
@@ -70,10 +71,6 @@
             color: var(--icon-color);
             transition: color 0.3s;
         }
-        .social-icons a img {
-            width: 32px;
-            height: 32px;
-        }
         .social-icons a:hover {
             color: var(--button-hover-border);
         }
@@ -96,7 +93,7 @@
 </head>
 <body>
     <div class="container">
-        <button id="toggleNightMode">&#9728;</button>
+        <button id="toggleNightMode"><i class="fas fa-sun"></i></button>
         <nav>
             <button id="homeBtn" class="active">Home</button>
             <button id="aboutBtn">About</button>
@@ -108,13 +105,13 @@
             <p style="font-size: 1.2em;">IT Student and Web Enthusiast</p>
             <div class="social-icons">
                 <a href="https://github.com/skhalidmahmud" target="_blank" title="GitHub">
-                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Icon">
+                    <i class="fab fa-github"></i>
                 </a>
                 <a href="https://twitter.com/skhalidmahmud" target="_blank" title="Twitter">
-                    <img src="https://abs.twimg.com/favicons/twitter.2.ico" alt="Twitter Icon">
+                    <i class="fab fa-twitter"></i>
                 </a>
                 <a href="https://linkedin.com/in/skhalidmahmud" target="_blank" title="LinkedIn">
-                    <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LinkedIn_Logo.png.original.png" alt="LinkedIn Icon">
+                    <i class="fab fa-linkedin-in"></i>
                 </a>
             </div>
         </div>
@@ -134,13 +131,13 @@
                 <p style="font-size: 1.2em;">IT Student and Web Enthusiast</p>
                 <div class="social-icons">
                     <a href="https://github.com/skhalidmahmud" target="_blank" title="GitHub">
-                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Icon">
+                        <i class="fab fa-github"></i>
                     </a>
                     <a href="https://twitter.com/skhalidmahmud" target="_blank" title="Twitter">
-                        <img src="https://abs.twimg.com/favicons/twitter.2.ico" alt="Twitter Icon">
+                        <i class="fab fa-twitter"></i>
                     </a>
                     <a href="https://linkedin.com/in/skhalidmahmud" target="_blank" title="LinkedIn">
-                        <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LinkedIn_Logo.png.original.png" alt="LinkedIn Icon">
+                        <i class="fab fa-linkedin"></i>
                     </a>
                 </div>
             `;
@@ -181,7 +178,7 @@
             document.body.style.setProperty('--button-border', isNightMode ? '#1e90ff' : '#888');
             document.body.style.setProperty('--button-hover-border', isNightMode ? '#4682b4' : '#aaa');
             document.body.style.setProperty('--icon-color', isNightMode ? 'black' : 'white');
-            toggleNightMode.innerHTML = isNightMode ? '&#9728;' : '&#9790;';
+            toggleNightMode.innerHTML = isNightMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
         });
     </script>
 </body>
