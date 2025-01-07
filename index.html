@@ -12,6 +12,8 @@
             --button-border: #1e90ff;
             --button-hover-border: #4682b4;
             --icon-color: black;
+            --transition-duration: 1.0s;
+            --transition-delay: 0.1s;
         }
 
         body {
@@ -25,6 +27,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            transition: background-color var(--transition-duration), color var(--transition-duration);
         }
 
         .container {
@@ -38,6 +41,7 @@
         nav {
             margin: 1em 0;
         }
+
         nav button {
             padding: 0.5em 1em;
             margin: 0 0.5em;
@@ -47,8 +51,11 @@
             border-radius: 20px;
             font-size: 1em;
             color: var(--text-color);
-            transition: border-color 0.3s, color 0.3s;
+            transition: border-color var(--transition-duration), color var(--transition-duration), 
+                        background-color var(--transition-duration), transform var(--transition-duration);
+            transition-delay: var(--transition-delay);
         }
+
         nav button:hover {
             border-color: var(--button-hover-border);
             color: var(--button-hover-border);
@@ -56,18 +63,28 @@
 
         .content {
             margin-top: 2em;
+            transition: opacity var(--transition-duration);
+        }
+
+        .vertical-line {
+            width: 100%;
+            height: 2px;
+            background-color: var(--button-border);
+            margin: 1em 0;
         }
 
         .social-icons {
             margin-top: 2em;
         }
+
         .social-icons a {
             margin: 0 0.5em;
             text-decoration: none;
             font-size: 2em;
             color: var(--icon-color);
-            transition: color 0.3s;
+            transition: color var(--transition-duration);
         }
+
         .social-icons a:hover {
             color: var(--button-hover-border);
         }
@@ -81,8 +98,9 @@
             cursor: pointer;
             font-size: 1.5em;
             color: var(--icon-color);
-            transition: color 0.3s;
+            transition: color var(--transition-duration);
         }
+
         #toggleNightMode:hover {
             color: var(--button-hover-border);
         }
@@ -106,17 +124,18 @@
             <img src="khalid.JPG" alt="Profile Picture" class="profile-pic">
             <h1 style="font-size: 2em;">Khalid Mahmud</h1>
             <p style="font-size: 1.2em;">IT Student and Web Enthusiast</p>
-            <div class="social-icons">
-                <a href="https://github.com/skhalidmahmud" target="_blank" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://twitter.com/skhalidmahmud" target="_blank" title="Twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://linkedin.com/in/skhalidmahmud" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </div>
+        </div>
+        <div class="vertical-line"></div> <!-- Added vertical line below buttons -->
+        <div class="social-icons">
+            <a href="https://github.com/skhalidmahmud" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://twitter.com/skhalidmahmud" target="_blank" title="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://linkedin.com/in/skhalidmahmud" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
         </div>
     </div>
 
@@ -132,17 +151,6 @@
                 <img src="khalid.JPG" alt="Profile Picture" class="profile-pic">
                 <h1 style="font-size: 2em;">Khalid Mahmud</h1>
                 <p style="font-size: 1.2em;">IT Student and Web Enthusiast</p>
-                <div class="social-icons">
-                    <a href="https://github.com/skhalidmahmud" target="_blank" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://twitter.com/skhalidmahmud" target="_blank" title="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/skhalidmahmud" target="_blank" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </div>
             `;
             homeBtn.classList.add('active');
             aboutBtn.classList.remove('active');
@@ -154,17 +162,6 @@
             content.innerHTML = `
                 <h1 style="font-size: 2em;">About Me</h1>
                 <p style="font-size: 1.2em;">Hello! I'm Khalid Mahmud, a passionate IT student with a keen interest in web development and user interface design.</p>
-                <div class="social-icons">
-                    <a href="https://github.com/skhalidmahmud" target="_blank" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://twitter.com/skhalidmahmud" target="_blank" title="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/skhalidmahmud" target="_blank" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </div>
             `;
             aboutBtn.classList.add('active');
             homeBtn.classList.remove('active');
