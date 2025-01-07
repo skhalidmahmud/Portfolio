@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <!-- FontAwesome CDN -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <!-- Add this base tag for proper relative URLs -->
-    <base href="/Portfolio/">
+    <title>Simple Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
             --bg-color: white;
@@ -41,26 +38,18 @@
         nav {
             margin: 1em 0;
         }
-
         nav button {
             padding: 0.5em 1em;
             margin: 0 0.5em;
             border: 2px solid var(--button-border);
-            background: none;
+            background: var(--bg-color);
             cursor: pointer;
             border-radius: 20px;
             font-size: 1em;
             color: var(--text-color);
             transition: border-color 0.3s, color 0.3s;
         }
-
         nav button:hover {
-            border-color: var(--button-hover-border);
-            color: var(--button-hover-border);
-        }
-
-        nav button.active {
-            background-color: var(--bg-color);
             border-color: var(--button-hover-border);
             color: var(--button-hover-border);
         }
@@ -72,7 +61,6 @@
         .social-icons {
             margin-top: 2em;
         }
-
         .social-icons a {
             margin: 0 0.5em;
             text-decoration: none;
@@ -80,7 +68,6 @@
             color: var(--icon-color);
             transition: color 0.3s;
         }
-
         .social-icons a:hover {
             color: var(--button-hover-border);
         }
@@ -96,9 +83,14 @@
             color: var(--icon-color);
             transition: color 0.3s;
         }
-
         #toggleNightMode:hover {
             color: var(--button-hover-border);
+        }
+
+        img.profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
         }
     </style>
 </head>
@@ -111,7 +103,7 @@
         </nav>
         <div class="content" id="content">
             <!-- Default Home Content -->
-            <img src="https://via.placeholder.com/150" alt="Profile Picture" style="border-radius: 50%;">
+            <img src="khalid.JPG" alt="Profile Picture" class="profile-pic">
             <h1 style="font-size: 2em;">Khalid Mahmud</h1>
             <p style="font-size: 1.2em;">IT Student and Web Enthusiast</p>
             <div class="social-icons">
@@ -137,7 +129,7 @@
         // Function to load Home content
         function loadHome() {
             content.innerHTML = `
-                <img src="https://via.placeholder.com/150" alt="Profile Picture" style="border-radius: 50%;">
+                <img src="khalid.JPG" alt="Profile Picture" class="profile-pic">
                 <h1 style="font-size: 2em;">Khalid Mahmud</h1>
                 <p style="font-size: 1.2em;">IT Student and Web Enthusiast</p>
                 <div class="social-icons">
