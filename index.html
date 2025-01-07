@@ -111,6 +111,7 @@
                     <i class="fab fa-twitter"></i>
                 </a>
                 <a href="https://linkedin.com/in/skhalidmahmud" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
                 </a>
             </div>
         </div>
@@ -121,6 +122,8 @@
         const homeBtn = document.getElementById('homeBtn');
         const aboutBtn = document.getElementById('aboutBtn');
         const toggleNightMode = document.getElementById('toggleNightMode');
+
+        const basePath = window.location.pathname.split('/')[1]; // Get the repository name
 
         // Function to load Home content
         function loadHome() {
@@ -142,7 +145,7 @@
             `;
             homeBtn.classList.add('active');
             aboutBtn.classList.remove('active');
-            history.pushState({ page: 'home' }, '', '/');
+            history.pushState({ page: 'home' }, '', `/${basePath}/`);
         }
 
         // Function to load About content
@@ -153,7 +156,7 @@
             `;
             aboutBtn.classList.add('active');
             homeBtn.classList.remove('active');
-            history.pushState({ page: 'about' }, '', '/about');
+            history.pushState({ page: 'about' }, '', `/${basePath}/about`);
         }
 
         // Event listeners
