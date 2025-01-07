@@ -111,7 +111,6 @@
                     <i class="fab fa-twitter"></i>
                 </a>
                 <a href="https://linkedin.com/in/skhalidmahmud" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
                 </a>
             </div>
         </div>
@@ -143,7 +142,7 @@
             `;
             homeBtn.classList.add('active');
             aboutBtn.classList.remove('active');
-            history.pushState(null, '', '/');
+            history.pushState({ page: 'home' }, '', '/');
         }
 
         // Function to load About content
@@ -154,7 +153,7 @@
             `;
             aboutBtn.classList.add('active');
             homeBtn.classList.remove('active');
-            history.pushState(null, '', '/about');
+            history.pushState({ page: 'about' }, '', '/about');
         }
 
         // Event listeners
@@ -162,8 +161,8 @@
         aboutBtn.addEventListener('click', loadAbout);
 
         // Handle browser navigation (Back/Forward buttons)
-        window.onpopstate = () => {
-            if (window.location.pathname === '/about') {
+        window.onpopstate = function(event) {
+            if (event.state && event.state.page === 'about') {
                 loadAbout();
             } else {
                 loadHome();
@@ -180,6 +179,9 @@
             document.body.style.setProperty('--icon-color', isNightMode ? 'black' : 'white');
             toggleNightMode.innerHTML = isNightMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
         });
+
+        // Load default Home content
+        loadHome();
     </script>
 </body>
 </html>
