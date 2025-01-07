@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Website</title>
+    <style>
+        :root {
+            --bg-color: white;
+            --text-color: black;
+            --button-border: #1e90ff;
+            --button-hover-border: #4682b4;
+            --icon-color: black;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-size: 1em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        nav {
+            margin: 1em 0;
+        }
+        nav button {
+            padding: 0.5em 1em;
+            margin: 0 0.5em;
+            border: 2px solid var(--button-border);
+            background: none;
+            cursor: pointer;
+            border-radius: 20px;
+            font-size: 1em;
+            color: var(--text-color);
+            transition: border-color 0.3s, color 0.3s;
+        }
+        nav button:hover {
+            border-color: var(--button-hover-border);
+            color: var(--button-hover-border);
+        }
+        nav button.active {
+            border-color: var(--button-hover-border);
+            color: var(--button-hover-border);
+        }
+
+        .content {
+            margin-top: 2em;
+        }
+        .social-icons {
+            margin-top: 2em;
+        }
+        .social-icons a {
+            margin: 0 0.5em;
+            text-decoration: none;
+            font-size: 2em;
+            color: var(--icon-color);
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: var(--button-hover-border);
+        }
+
+        #toggleNightMode {
+            position: fixed;
+            top: 1em;
+            right: 1em;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5em;
+            color: var(--icon-color);
+            transition: color 0.3s;
+        }
+        #toggleNightMode:hover {
+            color: var(--button-hover-border);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="toggleNightMode">&#9728;</button>
+        <nav>
+            <button id="homeBtn" class="active">Home</button>
+            <button id="aboutBtn">About</button>
+        </nav>
+        <div class="content" id="content">
+            <!-- Default Home Content -->
+            <img src="https://via.placeholder.com/150" alt="Profile Picture" style="border-radius: 50%;">
+            <h1 style="font-size: 2em;">Khalid Mahmud</h1>
+            <p style="font-size: 1.2em;">IT Student and Web Enthusiast</p>
+            <div class="social-icons">
+                <a href="https://github.com/skhalidmahmud" target="_blank" title="GitHub">
+                    <img src="https://via.placeholder.com/32?text=G" alt="GitHub Icon">
+                </a>
+                <a href="https://twitter.com/skhalidmahmud" target="_blank" title="Twitter">
+                    <img src="https://via.placeholder.com/32?text=T" alt="Twitter Icon">
+                </a>
+                <a href="https://linkedin.com/in/skhalidmahmud" target="_blank" title="LinkedIn">
+                    <img src="https://via.placeholder.com/32?text=L" alt="LinkedIn Icon">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const content = document.getElementById('content');
+        const homeBtn = document.getElementById('homeBtn');
+        const aboutBtn = document.getElementById('aboutBtn');
+        const toggleNightMode = document.getElementById('toggleNightMode');
+
+        // Function to load Home content
+        function loadHome() {
+            content.innerHTML = `
+                <img src="https://via.placeholder.com/150" alt="Profile Picture" style="border-radius: 50%;">
+                <h1 style="font-size: 2em;">Khalid Mahmud</h1>
+                <p style="font-size: 1.2em;">IT Student and Web Enthusiast</p>
+                <div class="social-icons">
+                    <a href="https://github.com/skhalidmahmud" target="_blank" title="GitHub">
+                        <img src="https://via.placeholder.com/32?text=G" alt="GitHub Icon">
+                    </a>
+                    <a href="https://twitter.com/skhalidmahmud" target="_blank" title="Twitter">
+                        <img src="https://via.placeholder.com/32?text=T" alt="Twitter Icon">
+                    </a>
+                    <a href="https://linkedin.com/in/skhalidmahmud" target="_blank" title="LinkedIn">
+                        <img src="https://via.placeholder.com/32?text=L" alt="LinkedIn Icon">
+                    </a>
+                </div>
+            `;
+            homeBtn.classList.add('active');
+            aboutBtn.classList.remove('active');
+            history.pushState(null, '', '/');
+        }
+
+        // Function to load About content
+        function loadAbout() {
+            content.innerHTML = `
+                <h1 style="font-size: 2em;">About Me</h1>
+                <p style="font-size: 1.2em;">Hello! I'm Khalid Mahmud, a passionate IT student with a keen interest in web development and user interface design.</p>
+            `;
+            aboutBtn.classList.add('active');
+            homeBtn.classList.remove('active');
+            history.pushState(null, '', '/about');
+        }
+
+        // Event listeners
+        homeBtn.addEventListener('click', loadHome);
+        aboutBtn.addEventListener('click', loadAbout);
+
+        // Handle browser navigation (Back/Forward buttons)
+        window.onpopstate = () => {
+            if (window.location.pathname === '/about') {
+                loadAbout();
+            } else {
+                loadHome();
+            }
+        };
+
+        // Night Mode Toggle
+        toggleNightMode.addEventListener('click', () => {
+            const isNightMode = document.body.style.getPropertyValue('--bg-color') === 'black';
+            document.body.style.setProperty('--bg-color', isNightMode ? 'white' : 'black');
+            document.body.style.setProperty('--text-color', isNightMode ? 'black' : 'white');
+            document.body.style.setProperty('--button-border', isNightMode ? '#1e90ff' : '#888');
+            document.body.style.setProperty('--button-hover-border', isNightMode ? '#4682b4' : '#aaa');
+            document.body.style.setProperty('--icon-color', isNightMode ? 'black' : 'white');
+            toggleNightMode.innerHTML = isNightMode ? '&#9728;' : '&#9790;';
+        });
+    </script>
+</body>
+</html>
