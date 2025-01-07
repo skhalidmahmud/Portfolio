@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <!-- FontAwesome CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Add this base tag for proper relative URLs -->
+    <base href="/Portfolio/">
     <style>
         :root {
             --bg-color: white;
             --text-color: black;
-            --button-border: #ccc;
+            --button-border: #1e90ff;
             --button-hover-border: #4682b4;
             --icon-color: black;
-            --button-hover-bg: #f0f0f0; /* Light gray background on hover in light mode */
         }
 
         body {
@@ -44,17 +46,22 @@
             padding: 0.5em 1em;
             margin: 0 0.5em;
             border: 2px solid var(--button-border);
-            background-color: var(--bg-color);
+            background: none;
             cursor: pointer;
             border-radius: 20px;
             font-size: 1em;
             color: var(--text-color);
-            transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+            transition: border-color 0.3s, color 0.3s;
         }
 
         nav button:hover {
             border-color: var(--button-hover-border);
-            background-color: var(--button-hover-bg);
+            color: var(--button-hover-border);
+        }
+
+        nav button.active {
+            background-color: var(--bg-color);
+            border-color: var(--button-hover-border);
             color: var(--button-hover-border);
         }
 
@@ -93,15 +100,6 @@
         #toggleNightMode:hover {
             color: var(--button-hover-border);
         }
-
-        body.dark-mode {
-            --bg-color: black;
-            --text-color: white;
-            --button-border: #555;
-            --button-hover-border: #4682b4;
-            --icon-color: white;
-            --button-hover-bg: #333; /* Darker background on hover in dark mode */
-        }
     </style>
 </head>
 <body>
@@ -123,7 +121,7 @@
                 <a href="https://twitter.com/skhalidmahmud" target="_blank" title="Twitter">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/skhalidmahmud" target="_blank" title="LinkedIn">
+                <a href="https://linkedin.com/in/skhalidmahmud" target="_blank" title="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
             </div>
@@ -149,7 +147,7 @@
                     <a href="https://twitter.com/skhalidmahmud" target="_blank" title="Twitter">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/skhalidmahmud" target="_blank" title="LinkedIn">
+                    <a href="https://linkedin.com/in/skhalidmahmud" target="_blank" title="LinkedIn">
                         <i class="fab fa-linkedin"></i>
                     </a>
                 </div>
@@ -171,7 +169,7 @@
                     <a href="https://twitter.com/skhalidmahmud" target="_blank" title="Twitter">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/skhalidmahmud" target="_blank" title="LinkedIn">
+                    <a href="https://linkedin.com/in/skhalidmahmud" target="_blank" title="LinkedIn">
                         <i class="fab fa-linkedin"></i>
                     </a>
                 </div>
@@ -199,10 +197,9 @@
             const isNightMode = document.body.style.getPropertyValue('--bg-color') === 'black';
             document.body.style.setProperty('--bg-color', isNightMode ? 'white' : 'black');
             document.body.style.setProperty('--text-color', isNightMode ? 'black' : 'white');
-            document.body.style.setProperty('--button-border', isNightMode ? '#ccc' : '#555');
-            document.body.style.setProperty('--button-hover-border', isNightMode ? '#4682b4' : '#4682b4');
+            document.body.style.setProperty('--button-border', isNightMode ? '#1e90ff' : '#888');
+            document.body.style.setProperty('--button-hover-border', isNightMode ? '#4682b4' : '#aaa');
             document.body.style.setProperty('--icon-color', isNightMode ? 'black' : 'white');
-            document.body.style.setProperty('--button-hover-bg', isNightMode ? '#f0f0f0' : '#333');
             toggleNightMode.innerHTML = isNightMode ? '&#9728;' : '&#9790;';
         });
     </script>
