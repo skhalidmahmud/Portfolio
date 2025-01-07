@@ -123,7 +123,8 @@
         const aboutBtn = document.getElementById('aboutBtn');
         const toggleNightMode = document.getElementById('toggleNightMode');
 
-        const basePath = window.location.pathname.split('/')[1]; // Get the repository name
+        // Get the repository name from the full URL
+        const basePath = window.location.pathname.split('/')[1]; // Extract the repository name from the path
 
         // Function to load Home content
         function loadHome() {
