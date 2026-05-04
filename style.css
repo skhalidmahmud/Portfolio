@@ -39,6 +39,23 @@ body {
     height: 100vh;
     z-index: -1;
     overflow: hidden;
+    background-color: var(--bg-primary);
+}
+
+.bg-elements::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/bg-aesthetic.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.08; /* Very low opacity as requested */
+    z-index: -2;
+    pointer-events: none;
 }
 
 .blob {
@@ -354,31 +371,35 @@ nav.scrolled {
 
 .image-wrapper {
     position: relative;
-    width: 350px;
-    height: 350px;
-    border-radius: 30%;
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .image-wrapper img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 30%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    object-position: bottom;
+    background-color: #ffffff;
+    border-radius: 50%;
     position: relative;
     z-index: 10;
-    border: 4px solid var(--glass-border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .glow-ring {
     position: absolute;
-    top: -5%;
-    left: -5%;
-    width: 110%;
-    height: 110%;
-    border-radius: 30%;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
     background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
     z-index: 1;
-    filter: blur(20px);
+    filter: blur(40px);
     opacity: 0.6;
     animation: pulse 3s infinite alternate;
 }
@@ -438,7 +459,7 @@ nav.scrolled {
 /* Skills Section */
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 
@@ -735,6 +756,10 @@ footer {
     .section {
         padding: 4rem 1.5rem;
     }
+    
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -753,7 +778,7 @@ footer {
     }
     
     .image-wrapper {
-        width: 280px;
-        height: 280px;
+        width: 100%;
+        max-width: 300px;
     }
 }

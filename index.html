@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Khalid Mahmud - Personal Portfolio">
-    <title>Khalid Mahmud | Portfolio</title>
+    <meta name="description" content="MD Khalid Mahmud - Personal Portfolio">
+    <title>MD Khalid Mahmud | Portfolio</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,8 +24,9 @@
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -40,22 +42,22 @@
         <section id="home" class="hero">
             <div class="hero-content hidden">
                 <h2 class="subtitle">Hello, I am</h2>
-                <h1 class="title">Khalid Mahmud</h1>
-                <h3 class="role">Software Developer <span class="typing-text"></span></h3>
-                <p class="tagline">I craft responsive websites and dynamic web applications where technologies meet creativity. Let's build something amazing together.</p>
+                <h1 class="title">MD Khalid Mahmud</h1>
+                <h3 class="role">Software Engineer <span class="typing-text"></span></h3>
+                <p class="tagline">Computer Science graduate specializing in Full-Stack Development, AI, and Large Language Models. Passionate about scalable solutions and intelligent systems.</p>
                 <div class="cta-buttons">
-                    <a href="#projects" class="btn primary-btn">Explore Work <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="doc/Md Khalid Mahmud Resume.pdf" target="_blank" class="btn primary-btn">View My CV <i class="fa-solid fa-file-pdf"></i></a>
                     <a href="#contact" class="btn secondary-btn">Get In Touch</a>
                 </div>
                 <div class="social-links">
-                    <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.github.com/skhalidmahmud" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/skhalidmahmud" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="mailto:khalidfromdhaka@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
             <div class="hero-image hidden">
                 <div class="image-wrapper">
-                    <img src="KHALID.jpg" alt="Khalid Mahmud" onerror="this.src='https://via.placeholder.com/400?text=Khalid'">
+                    <img src="img/KHALID_nobg.png" alt="Md Khalid Mahmud" onerror="this.src='img/profile.png'">
                     <div class="glow-ring"></div>
                 </div>
             </div>
@@ -69,128 +71,276 @@
             </div>
             <div class="about-content hidden">
                 <div class="about-text glass-card">
-                    <h3>Get to know me!</h3>
-                    <p>I'm a passionate developer focused on creating intuitive, dynamic user experiences. I enjoy turning complex problems into simple, beautiful, and intuitive designs.</p>
-                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open source, or enjoying a good cup of coffee.</p>
-                    <div class="stats">
-                        <div class="stat-item">
-                            <span class="stat-num" data-target="3">0</span>
-                            <span class="stat-text">Years<br>Experience</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-num" data-target="20">0</span>
-                            <span class="stat-text">Projects<br>Completed</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-num" data-target="15">0</span>
-                            <span class="stat-text">Happy<br>Clients</span>
-                        </div>
-                    </div>
+                    <h3>Career Objective</h3>
+                    <p>As a Computer Science graduate from European University of Bangladesh with specialized training in software development, web application development, and freelancing, I am eager to build a career in Full-Stack Development, Artificial Intelligence, and Large Language Models (LLMs).</p>
+                    <p>With a strong foundation in C, C++, C#, .NET, Python, and JavaScript, and hands-on experience in Django, REST APIs, GitHub, and modern web design, I aim to contribute to scalable software solutions, intelligent systems, and innovative applications. My long-term goal is to advance expertise in full-stack engineering and AI, while driving meaningful and sustainable growth within forward-thinking organizations.</p>
+                    
+                    <h3 style="margin-top: 2rem; color: var(--accent-primary);">Education</h3>
+                    <ul style="list-style-type: none; padding-left: 0; margin-top: 1rem;">
+                        <li style="margin-bottom: 1rem;">
+                            <strong>B.Sc. in Computer Science and Engineering</strong> (3.66 / 4.00)<br>
+                            <span style="color: var(--text-secondary)">European University of Bangladesh | Fall 2023</span>
+                        </li>
+                        <li style="margin-bottom: 1rem;">
+                            <strong>Higher Secondary School Certificate (HSC) - Science</strong><br>
+                            <span style="color: var(--text-secondary)">Pangsha Government College | 2019</span>
+                        </li>
+                        <li>
+                            <strong>Secondary School Certificate (SSC) - Science</strong> (5.00 / 5.00)<br>
+                            <span style="color: var(--text-secondary)">Kazi Abdul Majed Academy | 2017</span>
+                        </li>
+                    </ul>
                 </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <div class="section-header hidden">
+                <h2>Work <span>Experience</span></h2>
+                <div class="underline"></div>
+            </div>
+            <div class="experience-container hidden" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                
+                <div class="experience-card glass-card">
+                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 10px;">
+                        <h3>Founder & Software Engineer</h3>
+                        <span style="color: var(--accent-secondary); font-weight: 600;">Jun 2025 – Present</span>
+                    </div>
+                    <h4 style="color: var(--text-secondary); margin-bottom: 15px;">ThinkOri</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-angle-right" style="color: var(--accent-primary); margin-right: 8px;"></i> Led the development of web and API-based software projects from planning to deployment.</li>
+                        <li><i class="fa-solid fa-angle-right" style="color: var(--accent-primary); margin-right: 8px;"></i> Managed client communication, requirement analysis, budgeting, and project documentation.</li>
+                        <li><i class="fa-solid fa-angle-right" style="color: var(--accent-primary); margin-right: 8px;"></i> Oversaw team coordination, code quality, and the overall technical direction of ThinkOri.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card glass-card">
+                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 10px;">
+                        <h3>IT Support and Executive Editor</h3>
+                        <span style="color: var(--accent-secondary); font-weight: 600;">Mar 2024 - Mar 2025</span>
+                    </div>
+                    <h4 style="color: var(--text-secondary); margin-bottom: 15px;">BD MOTION STUDIO</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-angle-right" style="color: var(--accent-primary); margin-right: 8px;"></i> Coordinated with airlines, hotels, and tour operators to create travel packages.</li>
+                        <li><i class="fa-solid fa-angle-right" style="color: var(--accent-primary); margin-right: 8px;"></i> Managed financial transactions, invoicing, and supported audits.</li>
+                        <li><i class="fa-solid fa-angle-right" style="color: var(--accent-primary); margin-right: 8px;"></i> Assisted in recruitment, onboarding, attendance, and HR documentation.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card glass-card">
+                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 10px;">
+                        <h3>Sr. SAQ Executive Officer - SAQ</h3>
+                        <span style="color: var(--accent-secondary); font-weight: 600;">Sep 2023 - Feb 2024</span>
+                    </div>
+                    <h4 style="color: var(--text-secondary); margin-bottom: 15px;">MM Corporation & Engineers</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-angle-right" style="color: var(--accent-primary); margin-right: 8px;"></i> Oversaw SAQ-related operations, Legal, ensuring compliance with quality standards.</li>
+                        <li><i class="fa-solid fa-angle-right" style="color: var(--accent-primary); margin-right: 8px;"></i> Worked closely with stakeholders to identify problems and provide effective solutions.</li>
+                        <li><i class="fa-solid fa-angle-right" style="color: var(--accent-primary); margin-right: 8px;"></i> Enhanced skills in analysis, reporting, and operational management.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card glass-card">
+                    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 10px;">
+                        <h3>Project Manager - SAQ</h3>
+                        <span style="color: var(--accent-secondary); font-weight: 600;">Sep 2022 - Aug 2023</span>
+                    </div>
+                    <h4 style="color: var(--text-secondary); margin-bottom: 15px;">M/S Riaj Enterprise</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-angle-right" style="color: var(--accent-primary); margin-right: 8px;"></i> Managed projects from initiation to completion, ensuring timely delivery and client satisfaction.</li>
+                        <li><i class="fa-solid fa-angle-right" style="color: var(--accent-primary); margin-right: 8px;"></i> Coordinated cross-functional teams to improve workflow and efficiency.</li>
+                    </ul>
+                </div>
+
             </div>
         </section>
 
         <!-- Skills Section -->
         <section id="skills" class="section">
             <div class="section-header hidden">
-                <h2>My <span>Skills</span></h2>
+                <h2>Technical <span>Skills</span></h2>
                 <div class="underline"></div>
             </div>
             <div class="skills-container hidden">
                 <div class="skill-category glass-card">
-                    <h3>Frontend</h3>
+                    <h3>Programming</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag"><i class="fa-brands fa-html5"></i> HTML5</span>
-                        <span class="skill-tag"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
-                        <span class="skill-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
-                        <span class="skill-tag"><i class="fa-brands fa-react"></i> React</span>
-                    </div>
-                </div>
-                <div class="skill-category glass-card">
-                    <h3>Backend</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag"><i class="fa-brands fa-node-js"></i> Node.js</span>
                         <span class="skill-tag"><i class="fa-brands fa-python"></i> Python</span>
-                        <span class="skill-tag"><i class="fa-solid fa-database"></i> SQL</span>
+                        <span class="skill-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+                        <span class="skill-tag"><i class="fa-solid fa-code"></i> C & C++</span>
+                        <span class="skill-tag"><i class="fa-brands fa-microsoft"></i> C#</span>
+                        <span class="skill-tag"><i class="fa-brands fa-android"></i> Kotlin</span>
                     </div>
                 </div>
                 <div class="skill-category glass-card">
-                    <h3>Tools</h3>
+                    <h3>Frameworks & Web Dev</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag"><i class="fa-brands fa-git-alt"></i> Git</span>
-                        <span class="skill-tag"><i class="fa-brands fa-github"></i> GitHub</span>
-                        <span class="skill-tag"><i class="fa-brands fa-figma"></i> Figma</span>
+                        <span class="skill-tag"><i class="fa-brands fa-python"></i> Django</span>
+                        <span class="skill-tag"><i class="fa-solid fa-server"></i> REST API</span>
+                        <span class="skill-tag"><i class="fa-brands fa-microsoft"></i> .NET</span>
+                        <span class="skill-tag"><i class="fa-brands fa-html5"></i> HTML</span>
+                        <span class="skill-tag"><i class="fa-brands fa-bootstrap"></i> Bootstrap</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3>Databases & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fa-solid fa-database"></i> MySQL</span>
+                        <span class="skill-tag"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+                        <span class="skill-tag"><i class="fa-solid fa-fire"></i> Firebase</span>
+                        <span class="skill-tag"><i class="fa-brands fa-trello"></i> Trello</span>
+                        <span class="skill-tag"><i class="fa-solid fa-book"></i> Notion</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3>Networking & OS</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fa-brands fa-linux"></i> Linux (CLI)</span>
+                        <span class="skill-tag"><i class="fa-brands fa-windows"></i> Windows</span>
+                        <span class="skill-tag"><i class="fa-solid fa-network-wired"></i> Nmap</span>
+                        <span class="skill-tag"><i class="fa-solid fa-shield-halved"></i> Firewall Evasion</span>
+                        <span class="skill-tag"><i class="fa-solid fa-server"></i> cPanel</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section">
+        <!-- Certificates Section -->
+        <section id="certificates" class="section">
             <div class="section-header hidden">
-                <h2>Featured <span>Projects</span></h2>
+                <h2>My <span>Certificates</span></h2>
                 <div class="underline"></div>
             </div>
             <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card glass-card hidden">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Project 1">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link" aria-label="View Project"><i class="fa-solid fa-link"></i></a>
-                            <a href="#" class="project-link" aria-label="View Source"><i class="fa-brands fa-github"></i></a>
-                        </div>
+                
+                <div class="project-card glass-card hidden" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="font-size: 3rem; color: var(--accent-primary); margin-bottom: 1rem; text-align: center;">
+                        <i class="fa-solid fa-award"></i>
                     </div>
-                    <div class="project-info">
-                        <h3>E-Commerce Platform</h3>
-                        <p>A full-stack modern e-commerce platform with React, Node.js, and Stripe integration.</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
+                    <div class="project-info" style="padding: 0; text-align: center;">
+                        <h3 style="font-size: 1.1rem; min-height: 40px;">Web Application Development with Python, NSDA Level-4</h3>
+                        <div class="project-tech" style="justify-content: center; margin-top: 1rem; margin-bottom: 1.5rem;">
+                            <span>NSDA</span>
+                            <span>DiPTi</span>
                         </div>
+                        <a href="doc/certificates/Md Khalid Mahmud_Web Application Development with Python, NSDA Level-4.pdf" target="_blank" class="btn primary-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Certificate</a>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="project-card glass-card hidden">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Project 2">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link" aria-label="View Project"><i class="fa-solid fa-link"></i></a>
-                            <a href="#" class="project-link" aria-label="View Source"><i class="fa-brands fa-github"></i></a>
-                        </div>
+                <div class="project-card glass-card hidden" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="font-size: 3rem; color: var(--accent-primary); margin-bottom: 1rem; text-align: center;">
+                        <i class="fa-solid fa-award"></i>
                     </div>
-                    <div class="project-info">
-                        <h3>Task Management App</h3>
-                        <p>A beautiful drag-and-drop task management tool for individuals and small teams.</p>
-                        <div class="project-tech">
-                            <span>JavaScript</span>
-                            <span>CSS3</span>
-                            <span>Firebase</span>
+                    <div class="project-info" style="padding: 0; text-align: center;">
+                        <h3 style="font-size: 1.1rem; min-height: 40px;">Foundational C# with Microsoft</h3>
+                        <div class="project-tech" style="justify-content: center; margin-top: 1rem; margin-bottom: 1.5rem;">
+                            <span>FreeCodeCamp</span>
+                            <span>Microsoft</span>
                         </div>
+                        <a href="doc/certificates/freecodecamp.org_certification_mdkhalidmahmud_foundational-c-sharp-with-microsoft.pdf" target="_blank" class="btn primary-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Certificate</a>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="project-card glass-card hidden">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Project 3">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link" aria-label="View Project"><i class="fa-solid fa-link"></i></a>
-                            <a href="#" class="project-link" aria-label="View Source"><i class="fa-brands fa-github"></i></a>
-                        </div>
+                <div class="project-card glass-card hidden" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="font-size: 3rem; color: var(--accent-primary); margin-bottom: 1rem; text-align: center;">
+                        <i class="fa-solid fa-award"></i>
                     </div>
-                    <div class="project-info">
-                        <h3>Weather Dashboard</h3>
-                        <p>Real-time weather application with forecast graphs and interactive maps.</p>
-                        <div class="project-tech">
-                            <span>HTML</span>
-                            <span>API</span>
-                            <span>Chart.js</span>
+                    <div class="project-info" style="padding: 0; text-align: center;">
+                        <h3 style="font-size: 1.1rem; min-height: 40px;">Career Essentials in Software Development</h3>
+                        <div class="project-tech" style="justify-content: center; margin-top: 1rem; margin-bottom: 1.5rem;">
+                            <span>Microsoft</span>
+                            <span>LinkedIn</span>
                         </div>
+                        <a href="doc/certificates/CertificateOfCompletion_Career Essentials in Software Development by Microsoft and LinkedIn.pdf" target="_blank" class="btn primary-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Certificate</a>
                     </div>
                 </div>
+
+                <div class="project-card glass-card hidden" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="font-size: 3rem; color: var(--accent-primary); margin-bottom: 1rem; text-align: center;">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="project-info" style="padding: 0; text-align: center;">
+                        <h3 style="font-size: 1.1rem; min-height: 40px;">Career Essentials in Cybersecurity</h3>
+                        <div class="project-tech" style="justify-content: center; margin-top: 1rem; margin-bottom: 1.5rem;">
+                            <span>Microsoft</span>
+                            <span>LinkedIn</span>
+                        </div>
+                        <a href="doc/certificates/CertificateOfCompletion_Career Essentials in Cybersecurity by Microsoft and LinkedIn.pdf" target="_blank" class="btn primary-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Certificate</a>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card hidden" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="font-size: 3rem; color: var(--accent-primary); margin-bottom: 1rem; text-align: center;">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="project-info" style="padding: 0; text-align: center;">
+                        <h3 style="font-size: 1.1rem; min-height: 40px;">Web Design & Development for Freelancing</h3>
+                        <div class="project-tech" style="justify-content: center; margin-top: 1rem; margin-bottom: 1.5rem;">
+                            <span>NSDA Level-3</span>
+                        </div>
+                        <a href="doc/certificates/Md Khalid Mahmud_Web Design and Development for Freelancing, NSDA Level-3.pdf" target="_blank" class="btn primary-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Certificate</a>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card hidden" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="font-size: 3rem; color: var(--accent-primary); margin-bottom: 1rem; text-align: center;">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="project-info" style="padding: 0; text-align: center;">
+                        <h3 style="font-size: 1.1rem; min-height: 40px;">IT Support Service</h3>
+                        <div class="project-tech" style="justify-content: center; margin-top: 1rem; margin-bottom: 1.5rem;">
+                            <span>NSDA Level-3</span>
+                        </div>
+                        <a href="doc/certificates/MD Khalid Mahmud_IT Support Service, NSDA Level-3.pdf" target="_blank" class="btn primary-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Certificate</a>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card hidden" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="font-size: 3rem; color: var(--accent-primary); margin-bottom: 1rem; text-align: center;">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="project-info" style="padding: 0; text-align: center;">
+                        <h3 style="font-size: 1.1rem; min-height: 40px;">Programming Foundations Fundamentals</h3>
+                        <div class="project-tech" style="justify-content: center; margin-top: 1rem; margin-bottom: 1.5rem;">
+                            <span>LinkedIn Learning</span>
+                        </div>
+                        <a href="doc/certificates/CertificateOfCompletion_Programming Foundations Fundamentals.pdf" target="_blank" class="btn primary-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Certificate</a>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card hidden" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="font-size: 3rem; color: var(--accent-primary); margin-bottom: 1rem; text-align: center;">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="project-info" style="padding: 0; text-align: center;">
+                        <h3 style="font-size: 1.1rem; min-height: 40px;">Career Skills in Data Analytics</h3>
+                        <div class="project-tech" style="justify-content: center; margin-top: 1rem; margin-bottom: 1.5rem;">
+                            <span>LinkedIn</span>
+                            <span>Data Analysis</span>
+                        </div>
+                        <a href="doc/certificates/CertificateOfCompletion_Introduction to Career Skills in Data Analytics.pdf" target="_blank" class="btn primary-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Certificate</a>
+                    </div>
+                </div>
+
+                <div class="project-card glass-card hidden" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="font-size: 3rem; color: var(--accent-primary); margin-bottom: 1rem; text-align: center;">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="project-info" style="padding: 0; text-align: center;">
+                        <h3 style="font-size: 1.1rem; min-height: 40px;">Web Design</h3>
+                        <div class="project-tech" style="justify-content: center; margin-top: 1rem; margin-bottom: 1.5rem;">
+                            <span>NSDA Level-3</span>
+                        </div>
+                        <a href="doc/certificates/MD KHALID MAHMUD_Web Design, NSDA Level-3.pdf" target="_blank" class="btn primary-btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Certificate</a>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">View my other certificates in the CV or Request Documentations</p>
+                <a href="doc/Md Khalid Mahmud Resume.pdf" target="_blank" class="btn secondary-btn">Open Full Resume</a>
             </div>
         </section>
 
@@ -202,18 +352,28 @@
             </div>
             <div class="contact-container hidden">
                 <div class="contact-info glass-card">
-                    <h3>Let's Talk</h3>
-                    <p>Feel free to reach out for collaborations or just a friendly hello!</p>
+                    <h3>Contact Information</h3>
+                    <p>I'm always open to discussing full-stack development work, AI opportunities, or partnerships.</p>
                     <div class="info-item">
                         <i class="fa-solid fa-envelope"></i>
-                        <span>hello@khalidmahmud.com</span>
+                        <span><a href="mailto:khalidfromdhaka@gmail.com" style="color: inherit;">khalidfromdhaka@gmail.com</a></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>01403-001026 | 01518-966904</span>
                     </div>
                     <div class="info-item">
                         <i class="fa-solid fa-location-dot"></i>
-                        <span>New York, NY</span>
+                        <span>176/B/1 North Shyamoli, Road No. 2, Dhaka 1207</span>
+                    </div>
+                    
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Social Profiles</h3>
+                    <div class="social-links" style="margin-bottom: 1rem;">
+                        <a href="https://www.github.com/skhalidmahmud" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/skhalidmahmud" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <form class="contact-form glass-card" onsubmit="event.preventDefault();">
+                <form class="contact-form glass-card" onsubmit="event.preventDefault(); window.location.href='mailto:khalidfromdhaka@gmail.com?subject=Contact from Portfolio&body=' + document.getElementById('message').value;">
                     <div class="form-group">
                         <input type="text" id="name" required placeholder="Your Name">
                     </div>
@@ -223,7 +383,7 @@
                     <div class="form-group">
                         <textarea id="message" rows="5" required placeholder="Your Message"></textarea>
                     </div>
-                    <button type="submit" class="btn primary-btn btn-block">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+                    <button type="submit" class="btn primary-btn btn-block">Send via Email App <i class="fa-solid fa-paper-plane"></i></button>
                 </form>
             </div>
         </section>
@@ -232,10 +392,10 @@
     <footer>
         <div class="footer-content">
             <div class="logo">KM<span>.</span></div>
-            <p>&copy; <span id="year"></span> Khalid Mahmud. All rights reserved.</p>
+            <p>&copy; <span id="year"></span> MD Khalid Mahmud. All rights reserved.</p>
             <div class="social-links">
-                <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.github.com/skhalidmahmud" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/skhalidmahmud" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
         </div>
     </footer>
