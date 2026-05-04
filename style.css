@@ -30,6 +30,49 @@ body {
     overflow-x: hidden;
 }
 
+/* Custom Cursor (Desktop Only) */
+@media (pointer: fine) {
+    body, a, button, input, textarea, .project-card, .btn {
+        cursor: none !important;
+    }
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-primary);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.cursor-outline {
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 0;
+    /* Cute geometric flower SVG */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%238b5cf6" stroke-width="1.5"><path d="M12 22C12 22 17 19 17 15C17 11 12 10 12 10C12 10 7 11 7 15C7 19 12 22 12 22Z" fill="%238b5cf6" opacity="0.3"/><path d="M22 12C22 12 19 7 15 7C11 7 10 12 10 12C10 12 11 17 15 17C19 17 22 12 22 12Z" fill="%238b5cf6" opacity="0.3"/><path d="M2 12C2 12 7 19 11 19C15 19 14 12 14 12C14 12 15 7 11 7C7 7 2 12 2 12Z" fill="%238b5cf6" opacity="0.3"/><path d="M12 2C12 2 7 5 7 9C7 13 12 14 12 14C12 14 17 13 17 9C17 5 12 2 12 2Z" fill="%238b5cf6" opacity="0.3"/><circle cx="12" cy="12" r="2" fill="%233b82f6"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9998;
+    transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+}
+
+@media (max-width: 768px) {
+    .cursor-dot, .cursor-outline {
+        display: none !important;
+    }
+}
+
 /* Background Elements */
 .bg-elements {
     position: fixed;

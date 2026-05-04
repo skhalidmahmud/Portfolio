@@ -213,3 +213,60 @@ if (toggleCertsBtn) {
         }
     });
 }
+
+// Custom Fast Cursor Animation
+const cursorDot = document.createElement('div');
+cursorDot.classList.add('cursor-dot');
+document.body.appendChild(cursorDot);
+
+const cursorOutline = document.createElement('div');
+cursorOutline.classList.add('cursor-outline');
+document.body.appendChild(cursorOutline);
+
+let outlineX = 0;
+let outlineY = 0;
+let mouseX = 0;
+let mouseY = 0;
+
+// High-performance tracking via transform translate3d
+window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    
+    // Dot follows instantly
+    cursorDot.style.transform = `translate3d(${mouseX - 4}px, ${mouseY - 4}px, 0)`;
+});
+
+// Smooth lag for outline using requestAnimationFrame
+function animateCursor() {
+    let distX = mouseX - outlineX;
+    let distY = mouseY - outlineY;
+    
+    // Lerp (smooth follow)
+    outlineX = outlineX + (distX * 0.2);
+    outlineY = outlineY + (distY * 0.2);
+    
+    // 12px offset centers the 24px flower
+    cursorOutline.style.transform = `translate3d(${outlineX - 12}px, ${outlineY - 12}px, 0)`;
+    requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+// Add hover effects for the cursor
+document.addEventListener('mouseover', (e) => {
+    if (e.target.closest('a') || e.target.closest('button') || e.target.closest('.project-card')) {
+        cursorOutline.style.width = '36px';
+        cursorOutline.style.height = '36px';
+        cursorOutline.style.opacity = '0.6';
+        // adjust transform offset to keep it centered when scaled to 36px (offset 18)
+        cursorOutline.style.transform = `translate3d(${outlineX - 18}px, ${outlineY - 18}px, 0)`;
+    }
+});
+
+document.addEventListener('mouseout', (e) => {
+    if (e.target.closest('a') || e.target.closest('button') || e.target.closest('.project-card')) {
+        cursorOutline.style.width = '24px';
+        cursorOutline.style.height = '24px';
+        cursorOutline.style.opacity = '1';
+    }
+});
