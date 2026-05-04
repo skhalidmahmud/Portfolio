@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khalid Mahmud - Personal Portfolio">
+    <title>Khalid Mahmud | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="bg-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">KM<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content hidden">
+                <h2 class="subtitle">Hello, I am</h2>
+                <h1 class="title">Khalid Mahmud</h1>
+                <h3 class="role">Software Developer <span class="typing-text"></span></h3>
+                <p class="tagline">I craft responsive websites and dynamic web applications where technologies meet creativity. Let's build something amazing together.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn primary-btn">Explore Work <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn secondary-btn">Get In Touch</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="hero-image hidden">
+                <div class="image-wrapper">
+                    <img src="KHALID.jpg" alt="Khalid Mahmud" onerror="this.src='https://via.placeholder.com/400?text=Khalid'">
+                    <div class="glow-ring"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="section-header hidden">
+                <h2>About <span>Me</span></h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content hidden">
+                <div class="about-text glass-card">
+                    <h3>Get to know me!</h3>
+                    <p>I'm a passionate developer focused on creating intuitive, dynamic user experiences. I enjoy turning complex problems into simple, beautiful, and intuitive designs.</p>
+                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open source, or enjoying a good cup of coffee.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-num" data-target="3">0</span>
+                            <span class="stat-text">Years<br>Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num" data-target="20">0</span>
+                            <span class="stat-text">Projects<br>Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num" data-target="15">0</span>
+                            <span class="stat-text">Happy<br>Clients</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="section-header hidden">
+                <h2>My <span>Skills</span></h2>
+                <div class="underline"></div>
+            </div>
+            <div class="skills-container hidden">
+                <div class="skill-category glass-card">
+                    <h3>Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fa-brands fa-html5"></i> HTML5</span>
+                        <span class="skill-tag"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                        <span class="skill-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+                        <span class="skill-tag"><i class="fa-brands fa-react"></i> React</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3>Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fa-brands fa-node-js"></i> Node.js</span>
+                        <span class="skill-tag"><i class="fa-brands fa-python"></i> Python</span>
+                        <span class="skill-tag"><i class="fa-solid fa-database"></i> SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3>Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fa-brands fa-git-alt"></i> Git</span>
+                        <span class="skill-tag"><i class="fa-brands fa-github"></i> GitHub</span>
+                        <span class="skill-tag"><i class="fa-brands fa-figma"></i> Figma</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="section-header hidden">
+                <h2>Featured <span>Projects</span></h2>
+                <div class="underline"></div>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card glass-card hidden">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Project 1">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" aria-label="View Project"><i class="fa-solid fa-link"></i></a>
+                            <a href="#" class="project-link" aria-label="View Source"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>E-Commerce Platform</h3>
+                        <p>A full-stack modern e-commerce platform with React, Node.js, and Stripe integration.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass-card hidden">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Project 2">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" aria-label="View Project"><i class="fa-solid fa-link"></i></a>
+                            <a href="#" class="project-link" aria-label="View Source"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Task Management App</h3>
+                        <p>A beautiful drag-and-drop task management tool for individuals and small teams.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>CSS3</span>
+                            <span>Firebase</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card glass-card hidden">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Project 3">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" aria-label="View Project"><i class="fa-solid fa-link"></i></a>
+                            <a href="#" class="project-link" aria-label="View Source"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Weather Dashboard</h3>
+                        <p>Real-time weather application with forecast graphs and interactive maps.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>API</span>
+                            <span>Chart.js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="section-header hidden">
+                <h2>Get In <span>Touch</span></h2>
+                <div class="underline"></div>
+            </div>
+            <div class="contact-container hidden">
+                <div class="contact-info glass-card">
+                    <h3>Let's Talk</h3>
+                    <p>Feel free to reach out for collaborations or just a friendly hello!</p>
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>hello@khalidmahmud.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>New York, NY</span>
+                    </div>
+                </div>
+                <form class="contact-form glass-card" onsubmit="event.preventDefault();">
+                    <div class="form-group">
+                        <input type="text" id="name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" required placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn primary-btn btn-block">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo">KM<span>.</span></div>
+            <p>&copy; <span id="year"></span> Khalid Mahmud. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
