@@ -63,6 +63,28 @@
             </div>
         </section>
 
+        <!-- Terminal Section -->
+        <section id="terminal" class="section" style="padding-top: 0; padding-bottom: 2rem;">
+            <div class="terminal-container glass-card hidden">
+                <div class="terminal-header">
+                    <div class="term-btn red"></div>
+                    <div class="term-btn yellow"></div>
+                    <div class="term-btn green"></div>
+                    <div class="term-title">guest@khalid: ~/portfolio</div>
+                </div>
+                <div class="terminal-body" id="terminal-body" onclick="document.getElementById('terminal-input').focus()">
+                    <div class="terminal-output" id="terminal-output">
+                        <div class="term-line"><span class="term-accent">khalidOS (v1.0.0)</span> - Interactive Developer Portfolio</div>
+                        <div class="term-line">Type <span class="term-cmd">'help'</span> to see a list of available commands. Try clicking and typing!</div>
+                    </div>
+                    <div class="terminal-input-wrapper">
+                        <span class="term-prompt">guest@khalid:~$ </span>
+                        <input type="text" id="terminal-input" autocomplete="off" spellcheck="false">
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- About Section -->
         <section id="about" class="section">
             <div class="section-header hidden">

@@ -264,9 +264,81 @@ document.addEventListener('mouseover', (e) => {
 });
 
 document.addEventListener('mouseout', (e) => {
-    if (e.target.closest('a') || e.target.closest('button') || e.target.closest('.project-card')) {
+    if (e.target.closest('a') || e.target.closest('button') || e.target.closest('.project-card') || e.target.closest('#terminal-body')) {
         cursorOutline.style.width = '24px';
         cursorOutline.style.height = '24px';
         cursorOutline.style.opacity = '1';
     }
 });
+
+// --- Interactive Developer Terminal Logic ---
+const termInput = document.getElementById('terminal-input');
+const termOutput = document.getElementById('terminal-output');
+const termBody = document.getElementById('terminal-body');
+
+if (termInput) {
+    termInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            const command = this.value.trim().toLowerCase();
+            this.value = '';
+            
+            // Print the command that was run
+            const cmdLine = document.createElement('div');
+            cmdLine.className = 'term-line';
+            cmdLine.innerHTML = `<span class="term-prompt">guest@khalid:~$ </span>${command}`;
+            termOutput.appendChild(cmdLine);
+            
+            // Process and output
+            if (command) {
+                processCommand(command);
+            }
+            
+            // Scroll to the bottom automatically
+            termBody.scrollTop = termBody.scrollHeight;
+        }
+    });
+}
+
+function processCommand(cmd) {
+    const resLine = document.createElement('div');
+    resLine.className = 'term-line';
+    resLine.style.marginBottom = '15px';
+    
+    switch(cmd) {
+        case 'help':
+            resLine.innerHTML = `Available commands:<br>
+            <span class="term-cmd">about</span>   - Who is Khalid?<br>
+            <span class="term-cmd">skills</span>  - View technical skills<br>
+            <span class="term-cmd">hire</span>    - Get my contact info<br>
+            <span class="term-cmd">clear</span>   - Clear the terminal<br>
+            <span class="term-cmd">sudo</span>    - Run as administrator`;
+            break;
+        case 'about':
+            resLine.innerHTML = "I am a Computer Science graduate specializing in Full-Stack Development, AI, and Large Language Models. Passionate about building intelligent systems.";
+            break;
+        case 'skills':
+            resLine.innerHTML = "Languages : Python, C, C++, C#, JavaScript, HTML, CSS<br>Frameworks: Django, .NET, React, Vue<br>Tech      : LLMs, Prompt Engineering, Agents, SQL";
+            break;
+        case 'hire':
+            resLine.innerHTML = "Great choice! Email me at: <a href='mailto:khalidfromdhaka@gmail.com' style='color:var(--accent-primary)'>khalidfromdhaka@gmail.com</a>";
+            break;
+        case 'clear':
+            termOutput.innerHTML = '';
+            return; // Don't append empty line
+        case 'sudo':
+            resLine.innerHTML = "Permission denied: user 'guest' is not in the sudoers file. This incident will be reported to Khalid.";
+            resLine.style.color = '#ff5f56';
+            break;
+        case 'ls':
+            resLine.innerHTML = "index.html  style.css  script.js  cv.pdf  top_secret_project.exe";
+            break;
+        case 'rm -rf /':
+            resLine.innerHTML = "Nice try! I've disabled root access for guests. 😉";
+            resLine.style.color = '#ffbd2e';
+            break;
+        default:
+            resLine.innerHTML = `Command not found: ${cmd}. Type 'help' for available commands.`;
+    }
+    
+    termOutput.appendChild(resLine);
+}

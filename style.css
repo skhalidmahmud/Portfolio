@@ -736,6 +736,92 @@ footer {
     transform: translateY(0);
 }
 
+/* Terminal Component */
+.terminal-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgba(15, 23, 42, 0.85);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.terminal-header {
+    background: rgba(30, 41, 59, 0.95);
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--glass-border);
+    position: relative;
+}
+
+.term-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.term-btn.red { background-color: #ff5f56; }
+.term-btn.yellow { background-color: #ffbd2e; }
+.term-btn.green { background-color: #27c93f; }
+
+.term-title {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.terminal-body {
+    padding: 20px;
+    height: 250px;
+    overflow-y: auto;
+    color: #e2e8f0;
+    font-size: 0.95rem;
+    cursor: text;
+    text-align: left;
+}
+
+.terminal-body::-webkit-scrollbar {
+    width: 8px;
+}
+.terminal-body::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 4px;
+}
+
+.term-line {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.term-accent { color: var(--accent-primary); font-weight: bold; }
+.term-cmd { color: var(--accent-secondary); font-weight: bold; }
+.term-prompt { color: #27c93f; font-weight: bold; margin-right: 8px; }
+
+.terminal-input-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#terminal-input {
+    background: transparent;
+    border: none;
+    color: #e2e8f0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    flex-grow: 1;
+    outline: none;
+    caret-color: #e2e8f0;
+}
+
 /* Responsive Design */
 @media screen and (max-width: 992px) {
     .hero {
