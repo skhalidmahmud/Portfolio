@@ -560,12 +560,24 @@ nav.scrolled {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     font-size: 1.2rem;
+    transition: var(--transition);
+    color: var(--text-primary);
 }
 
 .social-links a:hover {
-    background: var(--accent-primary);
-    transform: translateY(-3px);
+    transform: translateY(-5px);
+    background: var(--text-primary);
+    color: var(--bg-primary);
 }
+
+/* Social Media Brand Colors on Hover */
+.social-links a:hover i.fa-github { color: #333; }
+.social-links a:hover i.fa-linkedin-in { color: #0077b5; }
+.social-links a:hover i.fa-facebook { color: #1877f2; }
+.social-links a:hover i.fa-x-twitter { color: #000000; }
+.social-links a:hover i.fa-instagram { color: #e4405f; }
+.social-links a:hover i.fa-whatsapp { color: #25d366; }
+.social-links a:hover i.fa-envelope { color: #ea4335; }
 
 .hero-image {
     flex: 1;
