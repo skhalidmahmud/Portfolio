@@ -166,3 +166,32 @@ if (heroImage && glowRing) {
         glowRing.style.transform = `translate(0, 0) scale(1.05)`;
     });
 }
+
+// Toggle extra certificates
+const toggleCertsBtn = document.getElementById('toggle-certs-btn');
+const extraCerts = document.querySelectorAll('.extra-cert');
+
+if (toggleCertsBtn) {
+    toggleCertsBtn.addEventListener('click', () => {
+        const isHidden = extraCerts[0].style.display === 'none';
+        
+        if (isHidden) {
+            extraCerts.forEach(cert => {
+                cert.style.display = 'flex';
+                // Slight delay to allow display:flex to apply before CSS transition
+                setTimeout(() => cert.classList.add('show'), 10);
+            });
+            toggleCertsBtn.innerHTML = 'Show Less <i class="fa-solid fa-chevron-up"></i>';
+        } else {
+            extraCerts.forEach(cert => {
+                cert.classList.remove('show');
+                setTimeout(() => cert.style.display = 'none', 300); // Wait for transition
+            });
+            toggleCertsBtn.innerHTML = 'Open Full Certificates <i class="fa-solid fa-chevron-down"></i>';
+            
+            // Scroll back up to the top of certificates section
+            const certSection = document.getElementById('certificates');
+            if(certSection) certSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+}
