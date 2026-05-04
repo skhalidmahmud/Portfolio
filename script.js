@@ -152,18 +152,36 @@ function animateCounters() {
 // Mouse movement effect on hero image
 const heroImage = document.querySelector('.hero-image');
 const glowRing = document.querySelector('.glow-ring');
+const profileImg = document.querySelector('.image-wrapper img');
 
-if (heroImage && glowRing) {
+if (heroImage && glowRing && profileImg) {
+    // Add smooth transition for when mouse leaves
+    profileImg.style.transition = 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease';
+    
     heroImage.addEventListener('mousemove', (e) => {
         const { left, top, width, height } = heroImage.getBoundingClientRect();
         const x = (e.clientX - left) / width - 0.5;
         const y = (e.clientY - top) / height - 0.5;
         
+        // Very fast transition during move for smooth tracking without lag
+        profileImg.style.transition = 'transform 0.1s ease-out, box-shadow 0.1s ease-out';
+        
         glowRing.style.transform = `translate(${x * 30}px, ${y * 30}px) scale(1.05)`;
+        
+        // 3D Tilt effect
+        const rotateX = -y * 20; // 10 deg max
+        const rotateY = x * 20;  // 10 deg max
+        profileImg.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05) translateY(-5px)`;
+        profileImg.style.boxShadow = `${-x * 20}px ${-y * 20 + 20}px 30px rgba(0,0,0,0.4)`;
     });
     
     heroImage.addEventListener('mouseleave', () => {
+        // Restore slow transition for smooth snap back
+        profileImg.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease';
+        
         glowRing.style.transform = `translate(0, 0) scale(1.05)`;
+        profileImg.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale(1) translateY(0)`;
+        profileImg.style.boxShadow = `0 10px 30px rgba(0,0,0,0.3)`;
     });
 }
 
