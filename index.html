@@ -44,6 +44,11 @@
                     <div class="color-dot" data-color="#ef4444" data-secondary="#b91c1c" style="background: #ef4444;"></div> <!-- Red -->
                 </div>
             </div>
+
+            <div class="setting-group" style="margin-top: 15px; border-top: 1px solid var(--glass-border); padding-top: 15px;">
+                <span style="font-size: 0.9rem; margin-bottom: 5px; display: block;">Language</span>
+                <div id="google_translate_element"></div>
+            </div>
         </div>
     </div>
 
@@ -543,6 +548,16 @@
         </div>
     </footer>
 
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,bn,hi,ja,ko,ar,zh-CN,es,fr,de,ru,pt',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="script.js"></script>
 </body>
 </html>
