@@ -11,6 +11,15 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+:root.light-mode {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #f1f5f9;
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(0, 0, 0, 0.05);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -28,6 +37,153 @@ html {
 body {
     position: relative;
     overflow-x: hidden;
+}
+
+/* Theme Switcher */
+.theme-switcher {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.theme-switcher-btn {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-right: none;
+    color: var(--text-primary);
+    padding: 12px 15px;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.theme-switcher-btn:hover {
+    color: var(--accent-primary);
+}
+
+.theme-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-right: none;
+    padding: 20px;
+    border-radius: 15px 0 0 15px;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.2);
+    width: 220px;
+    position: absolute;
+    right: -250px;
+    transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.theme-panel.active {
+    right: 0;
+}
+
+.theme-panel h4 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    text-align: center;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 10px;
+}
+
+.setting-group {
+    margin-bottom: 15px;
+}
+
+.mode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-secondary);
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #475569;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--accent-primary);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 20px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.color-options {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 5px 0;
+}
+
+.color-dot {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.color-dot:hover {
+    transform: scale(1.1);
+}
+
+.color-dot.active {
+    border-color: var(--text-primary);
+    transform: scale(1.1);
 }
 
 /* Custom Cursor (Desktop Only) */
@@ -217,9 +373,9 @@ nav {
 }
 
 nav.scrolled {
-    background: rgba(15, 23, 42, 0.8);
+    background: var(--glass-bg);
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -349,7 +505,7 @@ nav.scrolled {
     font-size: 4rem;
     font-weight: 800;
     margin-bottom: 1rem;
-    background: linear-gradient(to right, #fff, #94a3b8);
+    background: linear-gradient(to right, var(--text-primary), var(--accent-primary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -683,7 +839,7 @@ nav.scrolled {
 .form-group textarea {
     width: 100%;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: transparent;
     border: 1px solid var(--glass-border);
     border-radius: 8px;
     color: var(--text-primary);
@@ -705,9 +861,10 @@ nav.scrolled {
 
 /* Footer */
 footer {
-    background: rgba(15, 23, 42, 0.9);
+    background: var(--glass-bg);
     padding: 2rem;
     border-top: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
 }
 
 .footer-content {

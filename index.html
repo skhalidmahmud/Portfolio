@@ -13,6 +13,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+        <div class="theme-switcher-btn" id="theme-btn">
+            <i class="fa-solid fa-gear fa-spin" style="--fa-animation-duration: 4s;"></i>
+        </div>
+        <div class="theme-panel" id="theme-panel">
+            <h4>Theme Settings</h4>
+            
+            <div class="setting-group">
+                <span style="font-size: 0.9rem; margin-bottom: 5px; display: block;">Mode</span>
+                <div class="mode-toggle">
+                    <i class="fa-solid fa-moon"></i>
+                    <label class="switch">
+                        <input type="checkbox" id="mode-toggle-checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <i class="fa-solid fa-sun" style="color: #f59e0b;"></i>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <span style="font-size: 0.9rem; margin-bottom: 5px; display: block;">Colors</span>
+                <div class="color-options">
+                    <div class="color-dot active" data-color="#3b82f6" data-secondary="#8b5cf6" style="background: #3b82f6;"></div> <!-- Blue -->
+                    <div class="color-dot" data-color="#10b981" data-secondary="#059669" style="background: #10b981;"></div> <!-- Green -->
+                    <div class="color-dot" data-color="#ec4899" data-secondary="#be185d" style="background: #ec4899;"></div> <!-- Pink -->
+                    <div class="color-dot" data-color="#f59e0b" data-secondary="#d97706" style="background: #f59e0b;"></div> <!-- Orange -->
+                    <div class="color-dot" data-color="#8b5cf6" data-secondary="#6d28d9" style="background: #8b5cf6;"></div> <!-- Purple -->
+                    <div class="color-dot" data-color="#ef4444" data-secondary="#b91c1c" style="background: #ef4444;"></div> <!-- Red -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="bg-elements">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>

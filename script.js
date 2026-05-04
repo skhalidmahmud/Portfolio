@@ -342,3 +342,84 @@ function processCommand(cmd) {
     
     termOutput.appendChild(resLine);
 }
+
+// --- Theme Switcher Logic ---
+const themeBtn = document.getElementById('theme-btn');
+const themePanel = document.getElementById('theme-panel');
+const modeToggle = document.getElementById('mode-toggle-checkbox');
+const colorDots = document.querySelectorAll('.color-dot');
+const root = document.documentElement;
+
+// Toggle panel
+if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+        themePanel.classList.toggle('active');
+    });
+}
+
+// Close panel when clicking outside
+document.addEventListener('click', (e) => {
+    if (themePanel && themeBtn && !themePanel.contains(e.target) && !themeBtn.contains(e.target)) {
+        themePanel.classList.remove('active');
+    }
+});
+
+// Mode Toggle (Dark/Light)
+if (modeToggle) {
+    // Check local storage for saved mode
+    if (localStorage.getItem('theme-mode') === 'light') {
+        modeToggle.checked = true;
+        root.classList.add('light-mode');
+    }
+    
+    modeToggle.addEventListener('change', () => {
+        if (modeToggle.checked) {
+            root.classList.add('light-mode');
+            localStorage.setItem('theme-mode', 'light');
+        } else {
+            root.classList.remove('light-mode');
+            localStorage.setItem('theme-mode', 'dark');
+        }
+    });
+}
+
+// Color Picker Logic
+if (colorDots.length > 0) {
+    // Check local storage for saved color
+    const savedColor = localStorage.getItem('theme-color');
+    const savedSecondary = localStorage.getItem('theme-secondary');
+    
+    if (savedColor && savedSecondary) {
+        root.style.setProperty('--accent-primary', savedColor);
+        root.style.setProperty('--accent-secondary', savedSecondary);
+        
+        // Update active dot
+        colorDots.forEach(d => {
+            d.classList.remove('active');
+            if (d.getAttribute('data-color') === savedColor) {
+                d.classList.add('active');
+            }
+        });
+    }
+    
+    colorDots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            // Remove active class from all
+            colorDots.forEach(d => d.classList.remove('active'));
+            // Add active to clicked
+            dot.classList.add('active');
+            
+            // Get colors
+            const primaryColor = dot.getAttribute('data-color');
+            const secondaryColor = dot.getAttribute('data-secondary');
+            
+            // Set CSS variables
+            root.style.setProperty('--accent-primary', primaryColor);
+            root.style.setProperty('--accent-secondary', secondaryColor);
+            
+            // Save to local storage
+            localStorage.setItem('theme-color', primaryColor);
+            localStorage.setItem('theme-secondary', secondaryColor);
+        });
+    });
+}
