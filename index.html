@@ -68,6 +68,13 @@
                 <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            
+            <div class="cmd-trigger" id="cmd-trigger-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span class="cmd-text">Search...</span>
+                <kbd>Ctrl K</kbd>
+            </div>
+
             <div class="hamburger">
                 <div class="line1"></div>
                 <div class="line2"></div>
@@ -547,6 +554,24 @@
             </div>
         </div>
     </footer>
+
+    <!-- Command Palette (Ctrl+K) -->
+    <div id="cmd-overlay" class="cmd-palette-overlay">
+        <div class="cmd-palette-modal">
+            <div class="cmd-palette-header">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="cmd-input" placeholder="Type a command or search..." autocomplete="off" spellcheck="false">
+                <span class="cmd-shortcut">ESC</span>
+            </div>
+            <div class="cmd-palette-body" id="cmd-results">
+                <!-- Results injected via JS -->
+            </div>
+            <div class="cmd-palette-footer">
+                <span><i class="fa-solid fa-arrow-up"></i> <i class="fa-solid fa-arrow-down"></i> to navigate</span>
+                <span><i class="fa-solid fa-turn-down fa-rotate-90" style="margin-left:15px;"></i> to select</span>
+            </div>
+        </div>
+    </div>
 
     <script type="text/javascript">
         function googleTranslateElementInit() {

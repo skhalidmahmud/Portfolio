@@ -423,3 +423,113 @@ if (colorDots.length > 0) {
         });
     });
 }
+
+// --- Command Palette Logic ---
+const cmdOverlay = document.getElementById('cmd-overlay');
+const cmdInput = document.getElementById('cmd-input');
+const cmdResults = document.getElementById('cmd-results');
+const cmdTriggerBtn = document.getElementById('cmd-trigger-btn');
+let selectedCmdIndex = 0;
+
+const commands = [
+    { icon: 'fa-solid fa-house', name: 'Go to Home', action: () => { window.location.href = '#home'; } },
+    { icon: 'fa-solid fa-user', name: 'Go to About', action: () => { window.location.href = '#about'; } },
+    { icon: 'fa-solid fa-briefcase', name: 'Go to Experience', action: () => { window.location.href = '#experience'; } },
+    { icon: 'fa-solid fa-code', name: 'Go to Skills', action: () => { window.location.href = '#skills'; } },
+    { icon: 'fa-solid fa-certificate', name: 'Go to Certificates', action: () => { window.location.href = '#certificates'; } },
+    { icon: 'fa-solid fa-envelope', name: 'Send an Email', action: () => { window.location.href = 'mailto:khalidfromdhaka@gmail.com'; } },
+    { icon: 'fa-brands fa-github', name: 'View GitHub Profile', action: () => { window.open('https://www.github.com/skhalidmahmud', '_blank'); } },
+    { icon: 'fa-brands fa-linkedin', name: 'View LinkedIn Profile', action: () => { window.open('https://www.linkedin.com/in/skhalidmahmud', '_blank'); } },
+    { icon: 'fa-solid fa-file-pdf', name: 'Download Resume', action: () => { window.open('doc/Md Khalid Mahmud Resume.pdf', '_blank'); } },
+    { icon: 'fa-solid fa-moon', name: 'Toggle Dark/Light Mode', action: () => { document.getElementById('mode-toggle-checkbox').click(); } },
+];
+
+function renderCommands(query = '') {
+    if (!cmdResults) return;
+    cmdResults.innerHTML = '';
+    const filtered = commands.filter(c => c.name.toLowerCase().includes(query.toLowerCase()));
+    
+    if(filtered.length === 0) {
+        cmdResults.innerHTML = '<div style="padding: 15px; color: var(--text-secondary); text-align: center;">No commands found.</div>';
+        return;
+    }
+    
+    filtered.forEach((cmd, idx) => {
+        const div = document.createElement('div');
+        div.className = `cmd-item ${idx === selectedCmdIndex ? 'selected' : ''}`;
+        div.innerHTML = `<i class="${cmd.icon}"></i> ${cmd.name}`;
+        div.addEventListener('click', () => {
+            cmd.action();
+            closeCmdPalette();
+        });
+        div.addEventListener('mouseenter', () => {
+            selectedCmdIndex = idx;
+            renderCommands(query);
+        });
+        cmdResults.appendChild(div);
+    });
+}
+
+function openCmdPalette() {
+    if(!cmdOverlay) return;
+    cmdOverlay.classList.add('active');
+    cmdInput.value = '';
+    selectedCmdIndex = 0;
+    renderCommands();
+    setTimeout(() => cmdInput.focus(), 100);
+}
+
+function closeCmdPalette() {
+    if(!cmdOverlay) return;
+    cmdOverlay.classList.remove('active');
+    cmdInput.blur();
+}
+
+if (cmdTriggerBtn) {
+    cmdTriggerBtn.addEventListener('click', openCmdPalette);
+}
+
+// Global Keyboard listener for Ctrl+K or Cmd+K
+document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        if(cmdOverlay && cmdOverlay.classList.contains('active')) closeCmdPalette();
+        else openCmdPalette();
+    }
+    
+    if (!cmdOverlay || !cmdOverlay.classList.contains('active')) return;
+    
+    const filtered = commands.filter(c => c.name.toLowerCase().includes(cmdInput.value.toLowerCase()));
+    
+    if (e.key === 'Escape') {
+        closeCmdPalette();
+    } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        selectedCmdIndex = (selectedCmdIndex + 1) % filtered.length;
+        renderCommands(cmdInput.value);
+    } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        selectedCmdIndex = (selectedCmdIndex - 1 + filtered.length) % filtered.length;
+        renderCommands(cmdInput.value);
+    } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if(filtered[selectedCmdIndex]) {
+            filtered[selectedCmdIndex].action();
+            closeCmdPalette();
+        }
+    }
+});
+
+if (cmdInput) {
+    cmdInput.addEventListener('input', (e) => {
+        selectedCmdIndex = 0;
+        renderCommands(e.target.value);
+    });
+}
+
+// Close on outside click
+if (cmdOverlay) {
+    cmdOverlay.addEventListener('click', (e) => {
+        if(e.target === cmdOverlay) closeCmdPalette();
+    });
+}
